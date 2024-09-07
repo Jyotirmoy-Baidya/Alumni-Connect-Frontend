@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IoMenu } from 'react-icons/io5';
 import { profile } from '../../constants';
+import { TbLogout2 } from 'react-icons/tb';
 
 
 
@@ -56,20 +57,27 @@ function DrawerElement() {
                         <a href="#" className="block border-b-[1px] border-slate-500 p-2 text-gray-300 hover:text-teal-500">
                             Webinars
                         </a>
-                        <a href="#" className="block border-b-[1px] border-slate-500 p-2 text-gray-300 hover:text-teal-500">
-                            Alumni
+                        <a href="#" className="block p-2 text-gray-300 hover:text-teal-500">
+                            Alumnis
                         </a>
                     </div>
                 </div>
-            </div>
+
+
+                <div className="fixed bottom-2 right-2 flex items-center gap-2 p-2 text-gray-300 hover:text-teal-500">
+                    <TbLogout2 className='text-red-600 text-2xl' />
+                </div>
+            </div >
 
             {/* Backdrop */}
-            {isOpen && (
-                <div
-                    className="fixed inset-0 bg-black bg-opacity-50"
-                    onClick={toggleDrawer}
-                ></div>
-            )}
+            {
+                isOpen && (
+                    <div
+                        className="fixed inset-0 bg-black bg-opacity-50"
+                        onClick={toggleDrawer}
+                    ></div>
+                )
+            }
         </>
     );
 }
